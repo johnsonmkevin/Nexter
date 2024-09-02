@@ -58,9 +58,15 @@ li {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
-.container > * {
-  padding: 4rem;
-  font-size: 3rem;
+
+.heading-4, .heading-3, .heading-2, .heading-1 {
+  font-family: 400;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.heading-4 {
+  font-size: 1.3rem;
+  color: #6d5d4b;
 }
 
 .sidebar {
@@ -80,8 +86,42 @@ li {
 }
 
 .features {
-  background-color: #aaa;
   grid-column: center-start/center-end;
+  display: grid;
+  margin: 10rem 0;
+  gap: 6rem;
+  /*   grid-template-columns: subgrid; */
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-items: start; /* //default is stretch
+*/ /*   grid-template-columns: repeat(3, 1fr); */
+  /*   .feature {
+    &:nth-child(3n + 1) {
+      grid-column: 1 / span 2;
+    }
+    &:nth-child(3n + 2) {
+      grid-column: 4 / span 2;
+    }
+    &:nth-child(3n + 3) {
+      grid-column: 7 / span 2;
+    }
+  } */
+}
+.features .feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 1.5rem;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.features .feature__text {
+  font-size: 1.7rem;
+}
+.features .feature__icon {
+  fill: #c69963;
+  width: 4rem;
+  height: 4rem;
+  grid-row: 1/span 2;
+  transform: translateY(-1rem);
 }
 
 .story__pictures {

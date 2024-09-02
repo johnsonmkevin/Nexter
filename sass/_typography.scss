@@ -1,0 +1,19 @@
+%heading {
+  font-family: 400;
+  font-family: $font-display;
+}
+
+.heading-1 {
+  @extend %heading;
+}
+.heading-2 {
+  @extend %heading;
+}
+.heading-3 {
+  @extend %heading;
+}
+.heading-4 {
+  @extend %heading;
+  font-size: 1.3rem;
+  @include custom-header($color-grey-dark-2);
+}
