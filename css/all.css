@@ -215,15 +215,92 @@ li {
 }
 .homes .home {
   background-color: #f9f7f6;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 1;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.homes .home__like {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  fill: #c69963;
+  height: 2rem;
+  width: 2rem;
+  z-index: 2;
+  justify-self: end;
+  margin: 1rem;
+}
+.homes .home__like:hover {
+  fill: red;
+  cursor: pointer;
 }
 .homes .home__img {
   width: 100%;
+  grid-column: 1/span 2;
+  grid-row: 1;
+  z-index: 1;
+}
+.homes .home__liked {
+  fill: red;
+}
+.homes .home__amenities-container {
+  grid-row: 1;
+  grid-column: 1/span 2;
+  z-index: 6;
+  align-self: start;
+  margin-left: 0.8rem;
+  margin-top: 1rem;
+  max-width: 80%;
+}
+.homes .home__amenities-container :nth-child(even) {
+  margin-left: 0.6rem;
+}
+.homes .home__amenities {
+  padding: 0.25rem 2rem;
+  border-radius: 1.6rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+  background-color: #e3c4a8;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+.homes .home__name {
+  grid-column: 1/span 2;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1.25rem;
+  color: #fff;
+  font-weight: 400;
+  background-color: #101d2c;
+  width: 70%;
+  transform: translateY(-3rem);
+  z-index: 3;
+  margin: 0 auto;
+  border-radius: 2.6rem;
+}
+.homes .home__realtor-button {
+  grid-column: 1/span 2;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.homes .home__location, .homes .home__rooms, .homes .home__area, .homes .home__price {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
 }
 .homes .home__location svg, .homes .home__rooms svg, .homes .home__area svg, .homes .home__price svg {
   fill: #c69963;
   height: 2rem;
   width: 2rem;
 }
+.homes .home__location p, .homes .home__rooms p, .homes .home__area p, .homes .home__price p {
+  font-size: 1.7rem;
+}
+
 .gallery {
   background-color: #54483a;
   grid-column: full-start/full-end;

@@ -6,25 +6,93 @@
   gap: 6rem;
   .home {
     background-color: $color-grey-light-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
     &__like {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      fill: $color-primary;
+      height: 2rem;
+      width: 2rem;
+      z-index: 2;
+      justify-self: end;
+      margin: 1rem;
+      &:hover {
+        fill: red;
+        cursor: pointer;
+      }
     }
     &__img {
       width: 100%;
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      z-index: 1;
+    }
+    &__liked {
+      fill: red;
+    }
+    &__amenities-container {
+      grid-row: 1;
+      grid-column: 1 / span 2;
+      z-index: 6;
+      align-self: start;
+      margin-left: 0.8rem;
+      margin-top: 1rem;
+      max-width: 80%;
+      :nth-child(even) {
+        margin-left: 0.6rem;
+      }
     }
     &__amenities {
+      padding: 0.25rem 2rem;
+      border-radius: 1.6rem;
+      font-family: $font-display;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 500;
+      background-color: #e3c4a8;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
     }
     &__name {
+      grid-column: 1 / span 2;
+      font-family: $font-display;
+      font-size: 1.4rem;
+      text-align: center;
+      padding: 1.25rem;
+      color: #fff;
+      font-weight: 400;
+      background-color: $color-secondary;
+      width: 70%;
+      transform: translateY(-3rem);
+      z-index: 3;
+      margin: 0 auto;
+      border-radius: 2.6rem;
+    }
+    &__realtor-button {
+      grid-column: 1 / span 2;
+      font-size: 1.2rem;
+      font-weight: 400;
     }
     &__location,
     &__rooms,
     &__area,
     &__price {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      padding: 1.5rem;
       svg {
         fill: $color-primary;
         height: 2rem;
         width: 2rem;
       }
       p {
+        font-size: 1.7rem;
       }
     }
   }
