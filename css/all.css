@@ -136,7 +136,7 @@ li {
   margin: 10rem 0;
   gap: 6rem;
   /*   grid-template-columns: subgrid; */
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   align-items: start; /* //default is stretch
 */ /*   grid-template-columns: repeat(3, 1fr); */
   /*   .feature {
@@ -207,10 +207,23 @@ li {
 }
 
 .homes {
-  background-color: #101d2c;
   grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin: 15rem 0;
+  gap: 6rem;
 }
-
+.homes .home {
+  background-color: #f9f7f6;
+}
+.homes .home__img {
+  width: 100%;
+}
+.homes .home__location svg, .homes .home__rooms svg, .homes .home__area svg, .homes .home__price svg {
+  fill: #c69963;
+  height: 2rem;
+  width: 2rem;
+}
 .gallery {
   background-color: #54483a;
   grid-column: full-start/full-end;
