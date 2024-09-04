@@ -377,4 +377,31 @@ li {
 .footer {
   background-color: #101d2c;
   grid-column: full-start/full-end;
+  display: grid;
+  padding: 8rem;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  transition: all 2s;
+  gap: 2rem;
+  align-items: center;
+}
+.nav__link:link, .nav__link:visited {
+  color: #fff;
+  text-align: center;
+  padding: 1.4rem;
+  display: block;
+  font-size: 1.2rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 2rem 0rem;
 }
