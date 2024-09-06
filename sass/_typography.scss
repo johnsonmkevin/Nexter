@@ -24,7 +24,7 @@
 }
 .heading-4 {
   @extend %heading;
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   @include custom-header($color-grey-dark-2);
 }
 

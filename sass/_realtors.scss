@@ -27,11 +27,9 @@
   }
   &__details {
   }
-  &__heading {
-  }
 }
 
-.heading-4 {
-  @include custom-header($color-grey-light-1);
-  font-size: 1.5rem;
+.heading--4 {
+  font-size: 1.7rem;
+  color: #fff;
 }

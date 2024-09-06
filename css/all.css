@@ -36,6 +36,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 input,
 button,
@@ -74,6 +79,12 @@ li {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+@media only screen and (max-width: 62.5em) {
+  .container {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
+}
 
 .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: 400;
@@ -100,7 +111,7 @@ li {
 }
 
 .heading-4 {
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   color: #6d5d4b;
 }
 
@@ -128,6 +139,14 @@ li {
   justify-content: center;
   gap: 2rem;
 }
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    grid-row: 1;
+    grid-column: 1/-1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 .sidebar__nav {
   background-color: #fff;
   height: 2px;
@@ -147,6 +166,18 @@ li {
 .sidebar__nav::after {
   transform: translateY(1.3rem);
 }
+@media only screen and (max-width: 62.5em) {
+  .sidebar__nav {
+    margin-top: 0;
+    margin-right: 3rem;
+  }
+  .sidebar__nav::before {
+    transform: translateY(-1rem);
+  }
+  .sidebar__nav::after {
+    transform: translateY(1rem);
+  }
+}
 
 .header {
   background-color: #54483a;
@@ -157,8 +188,8 @@ li {
   display: grid;
   padding: 6rem;
   row-gap: 1.5rem;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   justify-content: center;
 }
 .header__logo {
@@ -183,9 +214,12 @@ li {
 .header__seenon-logos {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
 }
 .header__seenon-logos img {
-  height: 2.5rem;
+  max-height: 2rem;
+  max-width: 100%;
   filter: brightness(70%);
 }
 .header__btn {
@@ -221,9 +255,9 @@ li {
   color: #aaa;
   margin-top: -2px;
 }
-.heading-4 {
-  color: #f9f7f6;
-  font-size: 1.5rem;
+.heading--4 {
+  font-size: 1.7rem;
+  color: #fff;
 }
 
 .features {
