@@ -87,7 +87,7 @@ li {
 }
 @media only screen and (max-width: 50em) {
   .container {
-    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content);
+    grid-template-rows: 6rem calc(100vh - 6rem) repeat(6, min-content);
   }
 }
 
@@ -267,6 +267,13 @@ li {
     grid-template-columns: repeat(3, min-content max-content);
   }
 }
+@media only screen and (max-width: 37.5em) {
+  .realtors__list {
+    /*   display: flex;
+    gap: 2.5rem; */
+    grid-template-columns: min-content max-content;
+  }
+}
 .realtors__img {
   width: 7rem;
   border-radius: 50%;
@@ -276,6 +283,7 @@ li {
   text-transform: uppercase;
   color: #aaa;
   margin-top: -2px;
+  font-size: 1.3rem;
 }
 .heading--4 {
   font-size: 1.7rem;
@@ -328,7 +336,14 @@ li {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   align-items: center;
+  background-size: cover;
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), transparent), url(../img/back.jpg);
+}
+@media only screen and (max-width: 50em) {
+  .story__pictures {
+    grid-column: 1/-1;
+    padding: 6rem;
+  }
 }
 .story__img--1 {
   width: 100%;
@@ -336,12 +351,25 @@ li {
   grid-column: 2/6;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
 }
+@media only screen and (max-width: 50em) {
+  .story__img--1 {
+    grid-row: 1/-1;
+    grid-column: 1/5;
+    height: 100%;
+    width: 100%;
+  }
+}
 .story__img--2 {
-  width: 120%;
+  width: 100%;
   grid-row: 4/6;
   grid-column: 4/7;
   z-index: 100;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 50em) {
+  .story__img--2 {
+    grid-row: 1/-1;
+  }
 }
 .story__content {
   background-color: #f9f7f6;
@@ -351,6 +379,20 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+@media only screen and (max-width: 50em) {
+  .story__content {
+    grid-column: full-start/full-end;
+    grid-row: 5;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .story__content {
+    grid-column: full-start/full-end;
+    display: grid;
+    justify-items: start;
+    grid-template-rows: min-content;
+  }
 }
 .story__text {
   font-size: 1.5rem;
